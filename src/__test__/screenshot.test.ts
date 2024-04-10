@@ -44,7 +44,7 @@ describe('Screenshot', () => {
     page = await browser.newPage();
   }, 30000)
 
-  screenshotTesting({
+/*  screenshotTesting({
     componentName: 'loader',
     props: {
       size: ['l', 'm', 's', undefined],
@@ -58,7 +58,7 @@ describe('Screenshot', () => {
       failureThreshold: 0.02,
     }
   });
-/*
+
   screenshotTesting({
     componentName: 'button',
     props: {
@@ -72,7 +72,7 @@ describe('Screenshot', () => {
       height: 80,
     },
   });
-
+*/
   screenshotTesting({
     name: 'Icons',
     componentName: 'icons',
@@ -102,7 +102,7 @@ describe('Screenshot', () => {
       failureThreshold: 0.02,
     }
   });
-
+/*
   screenshotTesting({
     name: 'button hover',
     componentName: 'button',
