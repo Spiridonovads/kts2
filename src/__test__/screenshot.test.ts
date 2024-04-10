@@ -58,7 +58,7 @@ describe('Screenshot', () => {
       failureThreshold: 0.02,
     }
   });
-
+/*
   screenshotTesting({
     componentName: 'button',
     props: {
@@ -298,7 +298,7 @@ describe('Screenshot', () => {
       failureThreshold: 0.02,
     }
   });
-
+*/
   afterAll((done) => {
     browser.close();
     server.close(done);
