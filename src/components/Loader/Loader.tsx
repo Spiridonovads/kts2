@@ -3,13 +3,12 @@ import style from './style.module.css';
 
 export type LoaderProps = {
   size?: 's' | 'm' | 'l';
-
   className?: string;
 };
 
 const Loader: React.FC<LoaderProps> = (props) => {
   let preloader_className = props.className
-    ? `${style[props.className]} ${style.preloader}`
+    ? `${style[props.className]}`
     : `${style.preloader}`;
 
   return props.size === 'l' ? (
