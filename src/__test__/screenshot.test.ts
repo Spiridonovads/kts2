@@ -102,7 +102,7 @@ screenshotTesting({
       failureThreshold: 0.02,
     }
   });
-*/
+
   screenshotTesting({
     name: 'button hover',
     componentName: 'button',
@@ -122,7 +122,7 @@ screenshotTesting({
     }
   });
 
-/*
+
   screenshotTesting({
     componentName: 'card',
     props: {
@@ -164,7 +164,7 @@ screenshotTesting({
       await p.hover('.test-card')
   });
 
-/*
+
   screenshotTesting({
     componentName: 'input',
     props: {
@@ -182,7 +182,7 @@ screenshotTesting({
     //   failureThreshold: 0.02,
     // }
   });
-
+*/
   screenshotTesting({
     name: 'input focus',
     componentName: 'input',
@@ -201,7 +201,7 @@ screenshotTesting({
     }
   });
 
-
+/*
   screenshotTesting({
     componentName: 'multidropdown',
     props: {

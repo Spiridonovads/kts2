@@ -6,9 +6,9 @@
 }
 
 .wrapper {
-	width: 300px;
+  width: 400px;
   height: 52px;
-	position: relative;
+  position: relative;
 }
 
 .input {
@@ -16,9 +16,9 @@
   padding: var(--space-s) var(--space-xs);
   outline: 1px rgba(255, 255, 255, 1);
   border: none;
-  width: 300px;
+  width: 400px;
   height: 52px;
-	position: relative;
+  position: relative;
 }
 
 .input::placeholder {
@@ -37,8 +37,10 @@
 }
 
 .icon {
-	position: absolute;
-	top: 13px;
-	right: 11px;
+  position: absolute;
+  top: 13px;
+  right: 11px;
 }
 
+.afterSlot {
+}

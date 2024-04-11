@@ -16,41 +16,29 @@ export type InputProps = Omit<
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ onChange, className, disabled, ...props }) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      onChange(event.target.value);
+    };
+
     return (
-      <input
-        {...props}
+      <div className={`${className} ${style.wrapper}`}>
+        <input
+          {...props}
           className={style.input}
           type="text"
-          placeholder={props.value}
+          placeholder={props.value ? props.value : 'Текст'}
           disabled={!!disabled}
+          onChange={handleChange}
         ></input>
-    )
+        {props.afterSlot && (
+          <div className={style.icon}>
+            <Icon color="secondary" />
+          </div>
+        )}
+      </div>
+    );
   }
 );
 
 export default Input;
 
-/*props.afterSlot ? (
-      <div className={style.wrapper}>
-        <input
-        {...props}
-          className={style.input}
-          type="text"
-          placeholder={props.value}
-          disabled={!!disabled}
-        ></input>
-        <div className={style.icon}>
-          <Icon color="secondary" />
-        </div>
-      </div>
-    ) : (
-      <div className={style.wrapper}>
-        <input
-          className={style.input}
-          type="text"
-          value={props.value}
-          placeholder="Текст"
-          disabled={!!disabled}
-        ></input>
-      </div>
-    ); */
