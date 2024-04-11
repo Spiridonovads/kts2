@@ -58,7 +58,7 @@ screenshotTesting({
       failureThreshold: 0.02,
     }
   });
-*/
+
   screenshotTesting({
     componentName: 'button',
     props: {
@@ -122,7 +122,7 @@ screenshotTesting({
     }
   });
 
-/*
+*/
   screenshotTesting({
     componentName: 'card',
     props: {
@@ -130,7 +130,7 @@ screenshotTesting({
       title: ['kts-school-frontend', 'kts-school-frontend kts-school-frontend kts-school-frontend kts-school-frontend'],
       subtitle: ['ktsstudio', 'kts-school-frontend kts-school-frontend kts-school-frontend kts-school-frontend kts-school-frontend kts-school-frontend kts-school-frontend'],
       contentSlot: ['99.88'],
-      // image: ['/picture.svg'],
+      image: ['/picture.svg'],
       captionSlot: [undefined, 'caption-text']
     },
     viewPort: {
@@ -150,7 +150,7 @@ screenshotTesting({
       title: ['kts-school-frontend', 'kts-school-frontend kts-school-frontend kts-school-frontend kts-school-frontend'],
       subtitle: ['ktsstudio', 'kts-school-frontend kts-school-frontend kts-school-frontend kts-school-frontend kts-school-frontend kts-school-frontend kts-school-frontend'],
       contentSlot: ['99.88'],
-      // image: ['/picture.svg'],
+      image: ['/picture.svg'],
       captionSlot: [undefined, 'caption-text']
     },
     viewPort: {
@@ -164,7 +164,7 @@ screenshotTesting({
       await p.hover('.test-card')
   });
 
-
+/*
   screenshotTesting({
     componentName: 'input',
     props: {
