@@ -1,5 +1,4 @@
 .preloader {
-	transition: 1s linear;
 	animation: myAnimation 1s infinite;
   animation-timing-function: linear;
 }
@@ -12,3 +11,4 @@
 			transform: rotate(360deg);
 	}
 }
+

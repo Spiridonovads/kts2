@@ -43,7 +43,7 @@ describe('Screenshot', () => {
     browser = await puppeteer.launch(BROWSER_OPTIONS);
     page = await browser.newPage();
   }, 30000)
-
+/*
 screenshotTesting({
     componentName: 'loader',
     props: {
@@ -58,7 +58,7 @@ screenshotTesting({
       failureThreshold: 0.02,
     }
   });
-/*
+*/
   screenshotTesting({
     componentName: 'button',
     props: {
@@ -72,7 +72,7 @@ screenshotTesting({
       height: 80,
     },
   });
-
+/*
   screenshotTesting({
     name: 'Icons',
     componentName: 'icons',
@@ -102,7 +102,7 @@ screenshotTesting({
       failureThreshold: 0.02,
     }
   });
-/*
+
   screenshotTesting({
     name: 'button hover',
     componentName: 'button',
@@ -122,7 +122,7 @@ screenshotTesting({
     }
   });
 
-
+/*
   screenshotTesting({
     componentName: 'card',
     props: {

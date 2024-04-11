@@ -1,0 +1,60 @@
+:root {
+  --space-s: 14px;
+  --space-l: 20px;
+  --space-xxs: 8px;
+  --brand: #518581;
+  --brand-hover: #86aaa7;
+  --brand-active: #487773;
+  --brand-disabled: #d9d9d9;
+  --font-color: white;
+}
+
+.button {
+  background-color: var(--brand);
+  padding: var(--space-s) var(--space-l) var(--space-s) var(--space-l);
+  border: none;
+  color: var(--font-color);
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 400;
+  min-height: 52px;
+}
+
+.button:hover {
+  background-color: var(--brand-hover);
+}
+
+.button:active {
+  background-color: var(--brand-active);
+}
+
+.icon {
+  animation: myAnimation 1s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes myAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.disabled {
+  background-color: var(--brand-disabled);
+}
+
+.loading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-xxs);
+}
+
+.default {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
