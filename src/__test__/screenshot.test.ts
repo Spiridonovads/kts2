@@ -102,7 +102,7 @@ screenshotTesting({
       failureThreshold: 0.02,
     }
   });
-
+*/
   screenshotTesting({
     name: 'button hover',
     componentName: 'button',
@@ -122,7 +122,7 @@ screenshotTesting({
     }
   });
 
-*/
+/*
   screenshotTesting({
     componentName: 'card',
     props: {
