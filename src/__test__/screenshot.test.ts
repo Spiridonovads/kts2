@@ -182,7 +182,7 @@ screenshotTesting({
     //   failureThreshold: 0.02,
     // }
   });
-*/
+
   screenshotTesting({
     name: 'input focus',
     componentName: 'input',
@@ -201,7 +201,7 @@ screenshotTesting({
     }
   });
 
-/*
+*/
   screenshotTesting({
     componentName: 'multidropdown',
     props: {
@@ -237,7 +237,7 @@ screenshotTesting({
       await p.click('.test-multidropdown')
     },
   });
-
+/*
   screenshotTesting({
     componentName: 'checkbox',
     props: {

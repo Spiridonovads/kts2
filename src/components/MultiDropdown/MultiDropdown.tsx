@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import Input from '../Input';
+import style from './style.module.css';
+import { get } from 'http';
 
 export type Option = {
   /** Ключ варианта, используется для отправки на бек/использования в коде */
@@ -22,6 +25,114 @@ export type MultiDropdownProps = {
   getTitle: (value: Option[]) => string;
 };
 
-const MultiDropdown: React.FC<MultiDropdownProps> = () => null;
+const MultiDropdown: React.FC<MultiDropdownProps> = ({
+  options,
+  value,
+  onChange,
+  getTitle,
+  className,
+  disabled,
+}) => {
+  const [filteredOptions, setFilteredOptions] = useState<Option[]>(options);
+  const [inputValue, setInputValue] = useState<string>('');
+  const [showDropdown, setShowDropdown] = useState<boolean>(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [activeOptions, setActiveOptions] = useState<Option[]>([]);
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
+    filterOptions();
+  }, [inputValue, options]);
+
+  const filterOptions = () => {
+    const filtered = options.filter((option) =>
+      option.value.toLowerCase().includes(inputValue.toLowerCase())
+    );
+    setFilteredOptions(filtered);
+  };
+
+  const handleInputChange = (value: string) => {
+    setInputValue(value);
+  };
+
+  const handleInputFocus = () => {
+    setShowDropdown(true);
+  };
+
+  const handleOptionClick = (option: Option) => {
+    const isSelected = value.some((v) => v.key === option.key);
+
+    if (!isSelected) {
+      const newValue = [...value, option];
+      const newActiveOptions = [...activeOptions, option];
+      onChange(newValue);
+      setActiveOptions(newActiveOptions);
+    } else {
+      const newValue = value.filter((v) => v.key !== option.key);
+      const newActiveOptions = activeOptions.filter(
+        (v) => v.key !== option.key
+      );
+      onChange(newValue);
+      setActiveOptions(newActiveOptions);
+    }
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
+      setShowDropdown(false);
+    }
+  };
+
+  return (
+    <div ref={dropdownRef} className={`${className}`}>
+      {value.length > 0 && !showDropdown ? (
+        <Input
+          value={getTitle(value)}
+          onChange={handleInputChange}
+          onFocus={handleInputFocus}
+          disabled={disabled}
+          afterSlot
+        />
+      ) : (
+        <Input
+          value={inputValue}
+          placeholder={getTitle(value)}
+          onChange={handleInputChange}
+          onFocus={handleInputFocus}
+          disabled={disabled}
+          afterSlot
+        />
+      )}
+
+      {showDropdown && !disabled && (
+        <div className={style.dropdown}>
+          {filteredOptions.map((option) => {
+            const isActive = activeOptions.some((v) => v.key === option.key);
+            return (
+              <div
+                key={option.key}
+                onClick={() => handleOptionClick(option)}
+                className={`${style.option} ${
+                  isActive ? style.optionActive : ''
+                }`}
+              >
+                {option.value}
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default MultiDropdown;

@@ -18,12 +18,12 @@
   border: none;
   width: 400px;
   height: 52px;
+  font-size: 16px;
   position: relative;
 }
 
 .input::placeholder {
   color: rgba(175, 173, 181, 1);
-  font-size: 16px;
   line-height: 20px;
   font-weight: 400;
 }

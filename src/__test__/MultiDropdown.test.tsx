@@ -24,9 +24,7 @@ const WrappedDropdown: React.FC<
 
 describe('Тестирование компонента MultiDropdown', () => {
   test('Проверка отображения результата выполнения getTitle', () => {
-    const getTitle = jest
-      .fn()
-      .mockImplementation(defaultGetTitle);
+    const getTitle = jest.fn().mockImplementation(defaultGetTitle);
     const { rerender } = render(
       <MultiDropdown
         onChange={() => {}}
@@ -102,16 +100,14 @@ describe('Тестирование компонента MultiDropdown', () => {
     const firstOption = screen.getByText(options[0].value);
     expect(firstOption).toBeInTheDocument();
 
-    const outside = screen.getByTestId('outside')
+    const outside = screen.getByTestId('outside');
     userEvent.click(outside);
     expect(firstOption).not.toBeInTheDocument();
   });
 
   test('Проверка открытия/закрытия списка опций при клике', () => {
     const title = 'TEST_TITLE';
-    render(
-      <WrappedDropdown options={options} getTitle={() => title} />
-    );
+    render(<WrappedDropdown options={options} getTitle={() => title} />);
 
     const dropdownElement = screen.getByDisplayValue('');
     expect(dropdownElement).toBeInTheDocument();
@@ -127,9 +123,7 @@ describe('Тестирование компонента MultiDropdown', () => {
 
   test('Отображаются все переданные options', () => {
     const title = 'TEST_TITLE';
-    render(
-      <WrappedDropdown options={options} getTitle={() => title} />
-    );
+    render(<WrappedDropdown options={options} getTitle={() => title} />);
 
     const dropdownElement = screen.getByDisplayValue('');
     expect(dropdownElement).toBeInTheDocument();
@@ -160,11 +154,7 @@ describe('Тестирование компонента MultiDropdown', () => {
     expect(firstOption).toBeInTheDocument();
 
     rerender(
-      <WrappedDropdown
-        options={options}
-        getTitle={() => title}
-        disabled
-      />
+      <WrappedDropdown options={options} getTitle={() => title} disabled />
     );
 
     expect(firstOption).not.toBeInTheDocument();
@@ -256,9 +246,7 @@ describe('Тестирование компонента MultiDropdown', () => {
 
   test('Проверка фильтрации', () => {
     const title = 'TEST_TITLE';
-    render(
-      <WrappedDropdown options={options} getTitle={() => title} />
-    );
+    render(<WrappedDropdown options={options} getTitle={() => title} />);
 
     const dropdownElement = screen.getByDisplayValue('');
     expect(dropdownElement).toBeInTheDocument();
