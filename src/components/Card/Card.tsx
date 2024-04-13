@@ -24,7 +24,7 @@ export type CardProps = {
 const Card: React.FC<CardProps> = ({ title, subtitle, className, ...props }) => {
   return (
     <div className={`${className} ${style.wrapper}`} onClick={props.onClick}>
-      <img className={style.image} src={props.image} alt='image'/>
+      <img className={style.image} src={props.image} alt='img'/>
       <div className={style.content}>
         {props.captionSlot && (
           <Text tag="span" className="captionSlot">
