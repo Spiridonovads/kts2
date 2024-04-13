@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Input from '../Input';
 import style from './style.module.css';
-import { get } from 'http';
 
 export type Option = {
   /** Ключ варианта, используется для отправки на бек/использования в коде */
@@ -100,7 +99,7 @@ const MultiDropdown: React.FC<MultiDropdownProps> = ({
           onChange={handleInputChange}
           onFocus={handleInputFocus}
           disabled={disabled}
-          afterSlot
+          afterSlot={true}
         />
       ) : (
         <Input
@@ -109,7 +108,7 @@ const MultiDropdown: React.FC<MultiDropdownProps> = ({
           onChange={handleInputChange}
           onFocus={handleInputFocus}
           disabled={disabled}
-          afterSlot
+          afterSlot={true}
         />
       )}
 

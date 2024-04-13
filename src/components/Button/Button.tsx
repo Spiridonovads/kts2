@@ -21,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       {...props}
       className={`${className} ${style.button} ${style.loading} ${style.disabled}`}
-      disabled
+      disabled={true}
     >
       <Loader size="s" color="#FFFFFF" />
       {children}
@@ -30,6 +30,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       {...props}
       className={`${className} ${style.button} ${style.disabled} ${style.default}`}
+      disabled={true}
     >
       {children}
     </button>
@@ -37,7 +38,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       {...props}
       className={`${style.button} ${className} ${style.loading}`}
-      disabled
+      disabled={true}
     >
       <Loader size="s" color="#FFFFFF" />
       {children}
