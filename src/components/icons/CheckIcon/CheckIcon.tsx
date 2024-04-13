@@ -12,8 +12,8 @@ const CheckIcon: React.FC<IconProps> = ({ ...props }) => {
       : 'black';
   return (
     <svg
-      width="24"
-      height="24"
+      width={props.width ? props.width : '24'}
+      height={props.height ? props.height : '24'}
       {...props}
       viewBox="0 0 24 24"
       fill="none"
